@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bgcut – Remove backgrounds in seconds</title>
+  <meta name="description" content="bgcut automatically removes the background from your images – free, fast, and directly in your browser." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">bg</span><span class="logo-text">cut</span>
+      </a>
+      <nav class="nav">
+        <a href="#upload">App</a>
+        <a href="https://github.com/louizmac" target="_blank" rel="noopener" class="nav-gh">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">
+          Remove backgrounds.<br />
+          <span class="accent">In seconds.</span>
+        </h1>
+        <p class="hero-sub">
+          100% automatic, free, and no sign-up required.
+          Upload an image – bgcut does the rest.
+        </p>
+
+        <div id="upload" class="upload">
+          <input type="file" id="fileInput" accept="image/*" hidden />
+          <label for="fileInput" class="upload-drop" id="dropZone">
+            <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            <span class="upload-title">Drop image here</span>
+            <span class="upload-hint">or click to select · PNG, JPG, WEBP · max 10 MB</span>
+          </label>
+
+          <button type="button" id="startBtn" class="btn btn-primary" disabled>
+            Remove Background
+          </button>
+
+          <p class="upload-note">No upload to external servers – everything runs locally in your browser.</p>
+        </div>
+
+        <div id="result" class="result" hidden>
+          <div class="result-grid">
+            <figure class="result-card">
+              <img id="imgOriginal" alt="Original" />
+              <figcaption>Original</figcaption>
+            </figure>
+            <figure class="result-card">
+              <img id="imgResult" alt="Result" />
+              <figcaption>Removed</figcaption>
+            </figure>
+          </div>
+          <a id="downloadBtn" class="btn btn-secondary" download="bgcut.png">Download Result</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> bgcut – Open-source project</span>
+      <a href="https://github.com/louizmac" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
